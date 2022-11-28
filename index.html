@@ -4,11 +4,74 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- link css -->
+        <link rel="stylesheet" href="./css/style.css">
         <title>Document</title>
     </head>
     <body>
-        <p style="padding: 50px" id="ticketPrice"></p>
-        <!-- link js -->
+        <h2>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h2>
+        <section class="section_input container">
+            <div class="row">
+                <form name="message" method="post">
+                    <div class="input_container">
+                        <div class="input_col" >
+                            <label class="align_center input_label" for="name">Nome Cognome</label>
+                            <input class="align_center input_text" id="name" type="text" value="" name="name">
+                        </div>
+                    
+                        <div class="input_col">
+                            <label class="align_center input_label" for="numOfKm">Km da percorrere</label>
+                            <input class="align_center input_text" id="numOfKm" type="number" value="" name="numOfKm">
+                        </div>
+                        
+                        <div class="input_col_age">
+                            <label class="align_center input_label" for="age">Fascia d'età:</label>
+                            <select class="align_center select_age" name="age" id="age">
+                            <option value="">Minorenne</option>
+                            <option value="">Over 65</option>
+                            <option value="opel">Maggiorenne</option>
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="buttons_container">
+                        <input  class="button" type="submit" id="submit" value="Genera">
+                        <input  class="button" type="reset" value="Annulla">
+                    </div>
+                </form>
+            </div>
+        </section>
+        <h2>IL TUO BIGLIETTO</h2>
+        <section class="section_output container">
+            <div>
+                <h3>DETTAGLIO PASSEGGERI</h3>
+                <table class="table">
+                    <tr class="row_table">
+                        <th class="first_table_col"><h3>NOME PASSEGGERO</h3></th>
+                        <th>Offerta</th>
+                        <th>Carozza</th>
+                        <th>Codice CP</th>
+                        <th>Costo biglietto</th>
+                    </tr>
+                    <tr class="srow_table">
+                        <td class="first_table_col" id="output_name"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="row_table">
+                        <td class="first_table_col"></td>
+                        <td>Bigletto Standard</td>
+                        <td>5</td>
+                        <td>92911</td>
+                        <td>2.10€</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+<!--         <p style="padding: 50px" id="ticketPrice"></p>
+ -->        <!-- link js -->
         <script type="text/javascript" src="./js/script.js"></script>
     </body>
 </html>
