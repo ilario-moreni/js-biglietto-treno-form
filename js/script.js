@@ -21,10 +21,13 @@ submit.addEventListener("click", function(){
     eta = document.getElementById('my_select').value;
     if( eta == 'minorenne' ){
         finalPrice = fullPrice * 0.8;
+        document.getElementById('ticket_type').innerHTML = 'Biglietto Scontato'
     } else if (eta == 'over' ){
         finalPrice = fullPrice * 0.6;
+        document.getElementById('ticket_type').innerHTML = 'Biglietto Scontato'
     } else {
         finalPrice = fullPrice;
+        document.getElementById('ticket_type').innerHTML = 'Biglietto Standard'
     }
     console.log(eta);
     finalPrice = finalPrice.toFixed(2);
