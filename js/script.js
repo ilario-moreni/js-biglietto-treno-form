@@ -1,62 +1,32 @@
-
-let numOfKm;
+let numOfKm, fullName, fullPrice, finalPrice, eta;
 
 const submit = document.getElementById("submit");
 
 submit.addEventListener("click", function(){
     numOfKm = document.getElementById('numOfKm').value;
-    document.getElementById('output_km').innerHTML = numOfKm;
+
+    fullName = document.getElementById('name').value;
+
+
+
+    document.getElementById('output_name').innerHTML = fullName;
+
+    numOfKm = parseFloat(numOfKm);
     console.log(numOfKm)
+
+    fullPrice = 0.21 * numOfKm;
+
+    console.log(fullPrice);
+    
+    eta = document.getElementById('my_select').value;
+    if( eta == 'minorenne' ){
+        finalPrice = fullPrice * 0.8;
+    } else if (eta == 'over' ){
+        finalPrice = fullPrice * 0.6;
+    } else {
+        finalPrice = fullPrice;
+    }
+    console.log(eta);
+    finalPrice = finalPrice.toFixed(2);
+    document.getElementById('finalPrice').innerHTML = finalPrice+'€';
 });
-
-
-
-numOfKm = parseFloat(numOfKm);
-
-let fullName = document.getElementById('name');
-
-
-/* let age = prompt('Inserisci la tua età:');
-
-age = parseFloat(age);
-
-console.log(`${age}: età del passeggero`);
-
-
-let fullPrice = 0.21 * numOfKm;
-
-console.log(`${fullPrice}: prezzo pieno`);
-
-
-let youthSale, seniorSale, finalPrice;
-
-youthSale = (100 - 20) / 100;
-console.log(`${youthSale}: sconto per minorenni`);
-
-
-seniorSale = (100 - 40) / 100;
-console.log(`${seniorSale}: sconto per anziani`);
-
-
-
-if (age < 18){
-    finalPrice = fullPrice * youthSale
-} else if (age > 65){
-    finalPrice = fullPrice * seniorSale
-} else{
-    finalPrice = fullPrice
-}
-
-console.log(`${finalPrice}: prezzo scontato non arrotondato`);
-
-finalPrice = finalPrice.toFixed(2);
-
-
-
-let finalSentece = `Il prezzo del biglietto è di ${finalPrice}€`;
-
-console.log(finalSentece)
-
-
-document.getElementById('ticketPrice').innerHTML = finalSentece;
- */
